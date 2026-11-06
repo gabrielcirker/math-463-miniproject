@@ -44,7 +44,7 @@ SINDy method: [Brunton, Proctor, and Kutz (2016)](https://doi.org/10.1073/pnas.1
 
 ## Final report
 
-[Read the final report](report/final-report.pdf): *Modeling Immune Activation & Self-Tolerance: T-cell, Treg, and IL-2 Dynamics*, by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi (9-page PDF).
+[Read the final report](report/final-report.pdf): *Modeling Immune Activation & Self-Tolerance: Conventional T-cell, Treg, and IL-2 Dynamics*, by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi (9-page PDF).
 
 ## Website maintenance
 
