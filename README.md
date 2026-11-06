@@ -2,7 +2,7 @@
 
 T-cell, Treg, and IL-2 dynamics with ordinary differential equations and custom SINDy equation learning.
 
-**[Project website](https://gabrielcirker.github.io/math-463-miniproject/)** · **[Notebook](immune_miniproject.ipynb)** · **[Python code](immune_miniproject.py)**
+**[Project website](https://gabrielcirker.github.io/math-463-miniproject/)** · **[Final report](report/final-report.pdf)** · **[Notebook](immune_miniproject.ipynb)** · **[Python code](immune_miniproject.py)**
 
 ## Project files
 
@@ -19,7 +19,7 @@ T-cell, Treg, and IL-2 dynamics with ordinary differential equations and custom 
 | [PROJECT_GUIDE.txt](PROJECT_GUIDE.txt) | Experiments and outputs |
 | [RESULTS.txt](RESULTS.txt) | Explanation of the included run |
 | [PAPER_COMPARISON.txt](PAPER_COMPARISON.txt) | Published baseline comparison and its limits |
-| [report/](report/) | Reserved for the final report |
+| [report/final-report.pdf](report/final-report.pdf) | Final project report |
 
 ## Run the project
 
@@ -44,7 +44,7 @@ SINDy method: [Brunton, Proctor, and Kutz (2016)](https://doi.org/10.1073/pnas.1
 
 ## Final report
 
-The final report will be added in [report/](report/). The website already reserves a section for it. To add a PDF later, place it at `report/final-report.pdf` and update the report section in `index.html` with a relative link.
+[Read the final report](report/final-report.pdf): *Modeling Immune Activation & Self-Tolerance: T-cell, Treg, and IL-2 Dynamics*, by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi (9-page PDF).
 
 ## Website maintenance
 

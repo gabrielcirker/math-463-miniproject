@@ -1,5 +1,5 @@
 # Final report
 
-Reserved for the group's final MATH 463 report.
+[Modeling Immune Activation & Self-Tolerance: T-cell, Treg, and IL-2 Dynamics](final-report.pdf)
 
-Add the finished PDF as `final-report.pdf`, then link it from the report section in `../index.html` and the repository README.
+Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi. MATH 463: Mathematical Biology. 9-page PDF.
