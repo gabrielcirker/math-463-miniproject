@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MATH 463 miniproject: T-cell, Treg, and IL-2 dynamics, parameter experiments, and sparse equation discovery with SINDy. Code, figures, data, and project guides.">
+  <meta name="description" content="MATH 463 miniproject by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi. A three-state model of T-cell, Treg, and IL-2 dynamics, parameter experiments, and SINDy results.">
   <meta name="theme-color" content="#f7f5ef">
-  <title>Immune Dynamics · MATH 463 Miniproject</title>
+  <title>T-cell, Treg, and IL-2 Dynamics · MATH 463</title>
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
     <a class="wordmark" href="#overview" aria-label="MATH 463 miniproject, overview">MATH 463 <span>Miniproject</span></a>
     <nav aria-label="Main navigation">
       <a href="#overview">Overview</a>
-      <a href="#files">Files</a>
-      <a href="#figures">Figures</a>
+      <a href="#files">Methods &amp; files</a>
+      <a href="#figures">Results</a>
       <a href="#report">Final report</a>
     </nav>
   </header>
@@ -23,17 +23,17 @@
   <main id="main" class="wrap">
     <section id="overview" class="hero" aria-labelledby="project-title">
       <div class="hero-copy">
-        <p class="eyebrow">ODE modeling &amp; equation discovery</p>
-        <h1 id="project-title">Immune dynamics,<br>from model to data.</h1>
-        <p class="lede">Exploring T-cell, Treg, and IL-2 interactions through a three-state model, parameter experiments, and SINDy.</p>
+        <p class="eyebrow">MATH 463 miniproject</p>
+        <h1 id="project-title">T-cell, Treg, and<br>IL-2 dynamics</h1>
+        <p class="lede">This project uses a three-state ordinary differential equation model to study immune-cell dynamics, test parameter changes, and learn equations from simulated data with SINDy.</p>
         <p class="lede"><strong>Authors:</strong> Gabriel Cirker, Kennedy Jamison, &amp; Cecilia Pirozzi</p>
         <div class="actions">
           <a class="button primary" href="https://github.com/gabrielcirker/math-463-miniproject">View repository <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="#files">Explore the files <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#files">View methods and files <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <aside class="model-key" aria-label="The three model states">
-        <p class="eyebrow">The model states</p>
+      <aside class="model-key" aria-label="The three model variables">
+        <p class="eyebrow">Model variables</p>
         <dl>
           <div><dt>T</dt><dd>Activated conventional<br>T cells</dd></div>
           <div><dt>R</dt><dd>Activated regulatory<br>T cells</dd></div>
@@ -44,23 +44,23 @@
     </section>
 
     <div class="scope-note">
-      <span class="small-label">Model scope</span>
+      <span class="small-label">Model assumptions</span>
       <p>A constant-input interpretation of <a href="https://doi.org/10.3389/fimmu.2013.00474">Khailaie et al. (2013)</a>. It omits the two resting cell pools and does not reproduce the full five-state model or bifurcation diagram. Results use simulated data and are not clinical predictions.</p>
     </div>
 
     <section id="files" class="section" aria-labelledby="files-title">
       <div class="section-heading">
-        <div><p class="eyebrow">01 / Project materials</p><h2 id="files-title">Everything in one place.</h2></div>
-        <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main">Browse all files <span aria-hidden="true">↗</span></a>
+        <div><p class="eyebrow">01 / Model and methods</p><h2 id="files-title">Model, experiments, and code</h2><p class="lede">The model tracks activated conventional T cells, regulatory T cells, and IL-2. Experiments vary the activation inputs and use separate training, validation, and test trajectories for SINDy.</p></div>
+        <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main">Repository files <span aria-hidden="true">↗</span></a>
       </div>
       <div class="file-list">
         <div class="file-row">
           <div class="file-label"><span class="file-number">01</span><h3>Code &amp; notebook</h3></div>
-          <p>Run the model and the SINDy experiments.</p>
+          <p>Model equations, simulations, and SINDy implementation.</p>
           <div class="file-links"><a href="immune_miniproject.py">Python source</a><a href="https://github.com/gabrielcirker/math-463-miniproject/blob/main/immune_miniproject.ipynb">View notebook</a><a href="immune_miniproject.ipynb" download>Download notebook</a></div>
         </div>
         <div class="file-row">
-          <div class="file-label"><span class="file-number">02</span><h3>Project guides</h3></div>
+          <div class="file-label"><span class="file-number">02</span><h3>Methods &amp; project notes</h3></div>
           <p>Setup, equations, assumptions, and saved results.</p>
           <div class="file-links"><a href="START_HERE.txt">Start here</a><a href="PROJECT_GUIDE.txt">Project guide</a><a href="MODEL_GUIDE.txt">Model guide</a><a href="RESULTS.txt">Results notes</a></div>
         </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="file-row">
           <div class="file-label"><span class="file-number">04</span><h3>Paper comparison</h3></div>
-          <p>A check against the printed Figure 5B baseline trace.</p>
+          <p>Comparison with the paper’s printed Figure 5B baseline trace.</p>
           <div class="file-links"><a href="PAPER_COMPARISON.txt">Comparison notes</a><a href="check_paper_trace.py">Checking script</a><a href="https://github.com/gabrielcirker/math-463-miniproject/tree/main/paper_reference">Reference data</a></div>
         </div>
         <div class="file-row">
@@ -94,33 +94,33 @@ python immune_miniproject.py</code></pre>
 
     <section id="figures" class="section" aria-labelledby="figures-title">
       <div class="section-heading">
-        <div><p class="eyebrow">02 / Selected figures</p><h2 id="figures-title">From simulation to discovery.</h2></div>
+        <div><p class="eyebrow">02 / Results</p><h2 id="figures-title">Simulation and SINDy results</h2><p class="lede">The figures compare activation-input settings, the effect of λ, and SINDy training lengths. Results use clean simulated data from the three-state model.</p></div>
         <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main/results/figures">All six figures <span aria-hidden="true">↗</span></a>
       </div>
       <div class="figure-grid">
         <figure class="figure-wide">
           <a class="plot-link" href="results/figures/01_figure5_time_courses.svg" aria-label="Open full-resolution time-course figure"><img src="results/figures/01_figure5_time_courses.png" alt="Six simulated conventional T-cell time courses, comparing k values 0.2, 1.4, and 8.5 at lambda 0.02 and 0.006." width="2445" height="1455" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 01</span><h3>Time courses across input settings</h3><p>Six Figure 5 inset settings with fixed activation inputs.</p></div><a href="results/figures/01_figure5_time_courses.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption><div><span class="small-label">Figure 01</span><h3>T-cell time courses across activation inputs</h3><p>Six fixed-input settings corresponding to the paper’s Figure 5 insets.</p></div><a href="results/figures/01_figure5_time_courses.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
         <figure>
           <a class="plot-link" href="results/figures/03_lambda_experiment.svg" aria-label="Open full-resolution lambda experiment figure"><img src="results/figures/03_lambda_experiment.png" alt="Simulated T-cell, Treg, and IL-2 responses across four lambda values with k fixed at 1.4." width="2124" height="1850" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 03</span><h3>Changing λ</h3><p>Four λ values with k held at 1.4.</p></div><a href="results/figures/03_lambda_experiment.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption><div><span class="small-label">Figure 03</span><h3>Effect of λ on immune-cell dynamics</h3><p>Increasing λ reduced peak T-cell values in these four cases, with k fixed at 1.4.</p></div><a href="results/figures/03_lambda_experiment.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
         <figure>
           <a class="plot-link" href="results/figures/04_sindy_training_windows.svg" aria-label="Open full-resolution SINDy training-window figure"><img src="results/figures/04_sindy_training_windows.png" alt="SINDy forecasts compared with the known model for training windows ending at 50, 150, and 300 model time units." width="2665" height="1785" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 04</span><h3>Learning the equations</h3><p>SINDy fits using three training-window lengths.</p></div><a href="results/figures/04_sindy_training_windows.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption><div><span class="small-label">Figure 04</span><h3>SINDy fits across training windows</h3><p>Training windows of 50, 150, and 300 time units each recovered the model’s 12 nonzero coefficients.</p></div><a href="results/figures/04_sindy_training_windows.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
       </div>
     </section>
 
     <section id="report" class="report section" aria-labelledby="report-title">
-      <div><p class="eyebrow">03 / Final report</p><h2 id="report-title">The full study,<br>coming together here.</h2></div>
-      <div class="report-status"><span class="status">Forthcoming</span><p>This space is reserved for the group’s final report. Code, figures, and supporting files are available above.</p></div>
+      <div><p class="eyebrow">03 / Final report</p><h2 id="report-title">Final project report</h2></div>
+      <div class="report-status"><span class="status">Not yet added</span><p>The final report has not been added yet. Code, figures, data, and project notes are available above.</p></div>
     </section>
   </main>
 
   <footer class="site-footer wrap">
-    <p>MATH 463 <span>·</span> Immune Dynamics Miniproject</p>
+    <p>MATH 463 <span>·</span> T-cell, Treg, and IL-2 Dynamics</p>
     <div><a href="https://doi.org/10.3389/fimmu.2013.00474">Immune model · Khailaie et al.</a><a href="https://doi.org/10.1073/pnas.1517384113">SINDy · Brunton et al.</a><a href="https://github.com/gabrielcirker/math-463-miniproject">GitHub <span aria-hidden="true">↗</span></a></div>
   </footer>
 </body>
