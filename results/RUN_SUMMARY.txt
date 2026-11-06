@@ -1,0 +1,20 @@
+run summary
+
+Three-state constant-activation interpretation of Eq. (13)
+these results come from the fixed input model
+validation uses extra data and the test data stay separate
+
+Solver convergence: maximum normalized discrepancy = 3.92e-09
+
+lambda_0.006_window_50: complete=True, nonnegative=True; NRMSE(T,R,I)=(2.552e-06, 1.91e-06, 1.228e-06)
+lambda_0.006_window_150: complete=True, nonnegative=True; NRMSE(T,R,I)=(2.114e-07, 1.629e-07, 1.807e-07)
+lambda_0.006_window_300: complete=True, nonnegative=True; NRMSE(T,R,I)=(1.837e-07, 1.417e-07, 1.571e-07)
+lambda_0.02_window_300: complete=True, nonnegative=True; NRMSE(T,R,I)=(0.0006718, 0.0009789, 0.000627)
+
+check coefficient_comparison.csv to compare each term
+a close plot does not mean every term is right
+NaN means the value is missing
+period_T is the median peak spacing after the first quarter
+check period_intervals_T to see how many intervals were available
+run_manifest.json lists the files from this run
+see MODEL_GUIDE.txt and run_manifest.json for the setup and methods

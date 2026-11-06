@@ -1,0 +1,223 @@
+{
+  "source": {
+    "pdf": "fimmu-04-00474.pdf",
+    "pdf_page": 7,
+    "figure": "Figure 5B middle time-series inset",
+    "parameters": {
+      "lambda": 0.006,
+      "k": 1.4
+    },
+    "embedded_image": "R5.jpg",
+    "embedded_image_size": [
+      8700,
+      7371
+    ],
+    "extracted_image_sha256": "c98cf6455a68c14ff04419f5207de4173f8f6944c1563c0944b0070e2cb93d83",
+    "model_csv_sha256": "00d000bd90e194868c744ace15361bdcbce99f3751ab651e2807e0908499ab3b"
+  },
+  "calibration": {
+    "x_tick_times": [
+      200.0,
+      400.0,
+      600.0
+    ],
+    "x_tick_pixels": [
+      5615.0,
+      5995.5,
+      6375.5
+    ],
+    "y_tick_values": [
+      0.0,
+      200.0,
+      400.0,
+      600.0,
+      800.0,
+      1000.0,
+      1200.0
+    ],
+    "y_tick_pixels": [
+      5012.0,
+      4897.5,
+      4782.5,
+      4667.5,
+      4552.5,
+      4437.5,
+      4323.0
+    ],
+    "pixel_x_equals_scale_times_time_plus_offset": [
+      1.9012500000000012,
+      5234.8333333333285
+    ],
+    "pixel_y_equals_scale_times_T_plus_offset": [
+      -0.5744642857142858,
+      5012.17857142857
+    ],
+    "maximum_x_tick_regression_residual_pixels": 0.1666666666715173,
+    "maximum_y_tick_regression_residual_pixels": 0.2142857142871435,
+    "time_units_per_x_pixel": 0.5259697567389872,
+    "T_units_per_y_pixel": 1.740752253652471,
+    "note": "Labeled ticks determine the calibration rather than assuming a spine is exactly zero or fitting the simulation"
+  },
+  "extraction": {
+    "blue_pixel_rule": "B>120 and B-R>60 and B-G>40",
+    "crop": [
+      5242,
+      4225,
+      6384,
+      5025
+    ],
+    "peaks": "find_peaks on the top blue envelope with prominence 500 T units and distance 200 source pixels",
+    "peak_tie_rule": "midpoint of the min/max x coordinates sharing the local topmost blue pixel",
+    "limitations": [
+      "Top-pixel heights describe the outer colored stroke not exact author data or a precise centerline",
+      "The thick nearly vertical curves cause column medians to underestimate sharp maxima",
+      "Coordinate intervals perturb all tick coordinates and the selected peak coordinates by the stated pixel amount",
+      "These sensitivity intervals are deterministic coordinate perturbations not statistical confidence intervals",
+      "Model peak times and heights are sampled at the saved 0.05 time step",
+      "No amplitude phase parameter or curve-alignment optimization was used",
+      "This validates the constant-input inset comparison at raster resolution not the full five-state model or bifurcation diagram"
+    ]
+  },
+  "peaks": [
+    {
+      "peak": 1,
+      "source_top_pixel_x": 5423.0,
+      "source_top_pixel_x_bounds": [
+        5420.0,
+        5426.0
+      ],
+      "source_top_pixel_y": 4240.0,
+      "raster_top_time": 98.9699758930553,
+      "raster_top_height": 1344.1715884364285,
+      "raster_column_median_peak_time": 98.9699758930553,
+      "raster_column_median_peak_height": 1261.485856387936,
+      "model_sampled_peak_time": 99.6,
+      "model_sampled_peak_height": 1343.39709041,
+      "coordinate_sensitivity_2px": {
+        "time_bounds": [
+          94.38202247191154,
+          103.50991933725996
+        ],
+        "outer_stroke_height_bounds": [
+          1334.6308310163731,
+          1353.8317172349064
+        ]
+      },
+      "coordinate_sensitivity_3px": {
+        "time_bounds": [
+          92.86503203004537,
+          104.9793433355106
+        ],
+        "outer_stroke_height_bounds": [
+          1329.904527255925,
+          1358.7072481957932
+        ]
+      }
+    },
+    {
+      "peak": 2,
+      "source_top_pixel_x": 5713.0,
+      "source_top_pixel_x_bounds": [
+        5713.0,
+        5713.0
+      ],
+      "source_top_pixel_y": 4307.0,
+      "raster_top_time": 251.50120534736158,
+      "raster_top_height": 1227.5411874417127,
+      "raster_column_median_peak_time": 252.02717510410056,
+      "raster_column_median_peak_height": 1160.5222256760926,
+      "model_sampled_peak_time": 252.1,
+      "model_sampled_peak_height": 1226.46238056,
+      "coordinate_sensitivity_2px": {
+        "time_bounds": [
+          249.30601454064913,
+          253.67342489644867
+        ],
+        "outer_stroke_height_bounds": [
+          1218.7210379981461,
+          1236.471692211447
+        ]
+      },
+      "coordinate_sensitivity_3px": {
+        "time_bounds": [
+          248.19969074442554,
+          254.75103283322733
+        ],
+        "outer_stroke_height_bounds": [
+          1214.3517092700918,
+          1240.9789770944437
+        ]
+      }
+    },
+    {
+      "peak": 3,
+      "source_top_pixel_x": 6003.0,
+      "source_top_pixel_x_bounds": [
+        6002.0,
+        6004.0
+      ],
+      "source_top_pixel_y": 4307.0,
+      "raster_top_time": 404.0324348016679,
+      "raster_top_height": 1227.5411874417127,
+      "raster_column_median_peak_time": 404.0324348016679,
+      "raster_column_median_peak_height": 1164.0037301833977,
+      "model_sampled_peak_time": 404.35,
+      "model_sampled_peak_height": 1226.45675721,
+      "coordinate_sensitivity_2px": {
+        "time_bounds": [
+          401.402586017972,
+          406.6622835853629
+        ],
+        "outer_stroke_height_bounds": [
+          1218.7210379981461,
+          1236.471692211447
+        ]
+      },
+      "coordinate_sensitivity_3px": {
+        "time_bounds": [
+          400.3506465044947,
+          407.71422309883997
+        ],
+        "outer_stroke_height_bounds": [
+          1214.3517092700918,
+          1240.9789770944437
+        ]
+      }
+    },
+    {
+      "peak": 4,
+      "source_top_pixel_x": 6293.5,
+      "source_top_pixel_x_bounds": [
+        6291.0,
+        6296.0
+      ],
+      "source_top_pixel_y": 4307.0,
+      "raster_top_time": 556.8266491343436,
+      "raster_top_height": 1227.5411874417127,
+      "raster_column_median_peak_time": 556.5636642559741,
+      "raster_column_median_peak_height": 1160.5222256760926,
+      "model_sampled_peak_time": 556.55,
+      "model_sampled_peak_height": 1226.45109605,
+      "coordinate_sensitivity_2px": {
+        "time_bounds": [
+          553.3028122956196,
+          560.3877506058625
+        ],
+        "outer_stroke_height_bounds": [
+          1218.7210379981461,
+          1236.471692211447
+        ]
+      },
+      "coordinate_sensitivity_3px": {
+        "time_bounds": [
+          552.2070015220717,
+          561.5197702672875
+        ],
+        "outer_stroke_height_bounds": [
+          1214.3517092700918,
+          1240.9789770944437
+        ]
+      }
+    }
+  ]
+}

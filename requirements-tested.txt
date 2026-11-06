@@ -1,0 +1,5 @@
+# versions used for the saved results
+# requirements.txt allows other compatible versions
+numpy==2.3.5
+scipy==1.18.1
+matplotlib==3.11.2

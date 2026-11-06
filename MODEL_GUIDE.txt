@@ -1,0 +1,119 @@
+immune model notes
+
+what this is
+this code studies how conventional T cells and regulatory T cells interact with IL-2
+it also checks whether equations can be learned from the simulated data
+this is a general immune model with no myelin injury or recovery variable
+the results are model results rather than patient measurements
+
+the three variables
+T means activated conventional T cells
+R means activated regulatory T cells or Tregs
+I means interleukin 2 or IL-2 which is a growth signal used by both cell groups
+I does not mean infection here
+
+the equations
+dT/dt = a*I*T - b*T - c*T^2 - gamma*R*T + k
+dR/dt = epsilon*a*I*R - b*R + lambda*k
+dI/dt = d*T - e*I*(T+R) - f*I
+
+what the terms do
+a*I*T lets IL-2 help conventional T cells multiply
+b*T accounts for their natural loss
+c*T^2 limits their growth through activation induced cell death called fratricide
+gamma*R*T represents suppression by Tregs
+k supplies newly activated conventional T cells at a constant rate
+epsilon*a*I*R lets IL-2 help Tregs multiply
+b*R accounts for natural Treg loss
+lambda*k supplies newly activated Tregs
+d*T represents conventional T cells making IL-2
+e*I*T and e*I*R represent both cell groups using IL-2
+f*I represents IL-2 breaking down
+Tregs use IL-2 but do not make it in this model
+
+the default setup
+a = 0.4
+b = 0.1
+c = 1e-5
+d = 0.01
+e = 0.01
+f = 1
+gamma = 0.1
+epsilon = 0.6
+k = 1.4
+lambda = 0.006
+the baseline starts with T = R = I = 0
+time uses general model units rather than days
+lambda is a ratio of renewal rates rather than a measured Treg percentage
+
+why k stays constant
+the full paper also includes naive conventional cells N and resting Tregs Nhat
+their activation rates are beta*N and beta*Nhat
+when those resting pools are at equilibrium the paper gives
+k = beta*N0/(g+beta)
+khat = lambda*k
+this code replaces those changing supplies with constant inputs
+that leaves the three equations above rather than the full five variable model
+
+Table 1 prints an unclear value B for g so the code does not assign it a value
+Table 1 also gives N0 = 4 which makes k less than 4 in that equilibrium formula
+the Figure 5 comparison includes k = 8.5 as an independently supplied input
+that case cannot come from N0 = 4 without changing the resting pool assumptions
+the baseline k = 1.4 is a separate case
+this is why the outputs describe a constant input interpretation of the paper
+
+comparison with the published time series
+the six Figure 5 cases show T over time at different values of k and lambda
+the baseline plot shows all three variables together
+the paper proposes that low stimulation can give a weak response
+moderate stimulation can support a large response with repeated oscillations
+strong stimulation can activate enough Tregs to suppress the response
+there is no antigen variable here because stimulation is supplied to the model
+matching a plot visually does not establish an exact match to the authors data
+the baseline inset was also checked against its printed blue trace
+PAPER_COMPARISON.txt records the pixel calibration and scope of that comparison
+
+parameter experiment
+the experiment compares lambda = 0.006  0.009  0.012  0.02 while holding k at 1.4
+the results record peak T and how the later response changes
+later measurements use the final 75 percent of the trajectory
+peak spacing is a descriptive estimate rather than proof of a stable cycle
+check the number of peak intervals before interpreting that estimate
+
+learning equations with SINDy
+SINDy means sparse identification of nonlinear dynamics
+it tries to learn equations using a small number of candidate terms
+the baseline training windows end at 50  150  300
+the lambda = 0.02 case uses a window ending at 300
+validation starts at T = 25  R = 0.25  I = 0.10 and runs for 120 time units
+testing starts at T = 50  R = 0.5  I = 0.15 and runs from 0 to 600
+validation is extra data used to choose settings rather than refit coefficients
+the test trajectory is kept out of that choice
+
+how the fitting works
+fourth order finite differences estimate derivatives from the sampled states
+the fit does not get the true equations to calculate those training derivatives
+training data set the state scales and the candidate term scales
+root mean square scaling keeps large and small quantities more comparable
+STLSQ means sequentially thresholded least squares
+it fits coefficients removes small terms and refits the terms that remain
+settings are ranked by mean relative derivative error across the three equations
+each equation error is divided by its validation derivative mean square
+the score also adds 1e-5 for each retained coefficient
+a candidate must finish a nonnegative validation forecast to qualify
+the true coefficients and test errors do not choose the settings
+
+how to read the output
+derivative error measures agreement with estimated rates of change
+forecast error measures agreement after integrating the learned equations
+NRMSE means normalized root mean square error
+here it is the forecast root mean square error divided by that states true test range
+check each state separately and compare the coefficients as well as the curves
+small forecast errors do not guarantee that every correct term was recovered
+a failed or negative forecast remains a failure in the output
+short data windows and nearly constant states can make terms hard to distinguish
+we use clean simulated data and include the correct quadratic terms so this is an easier case for SINDy
+
+sources
+immune model https://doi.org/10.3389/fimmu.2013.00474
+SINDy https://doi.org/10.1073/pnas.1517384113

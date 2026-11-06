@@ -1,0 +1,49 @@
+project overview
+
+paper and model
+
+Khailaie and colleagues published the paper in 2013
+https://doi.org/10.3389/fimmu.2013.00474
+the code follows T R and IL2 as three changing variables
+MODEL_GUIDE.txt explains the terms and the constant input assumption
+the paper also describes changing resting cell pools which are not included here
+
+comparison with the published time series
+
+results/figures/01_figure5_time_courses.png shows the six Figure 5 inset settings
+the code uses zero initial T R and IL2 with fixed inputs k and lambda times k
+it does not reconstruct the full bifurcation diagram
+results/figures/06_paper_peak_comparison.png checks the four baseline peaks
+results/paper_peak_comparison.csv gives the approximate published and model values
+PAPER_COMPARISON.txt records a check against the full printed baseline trace
+the baseline curve matches the printed line within the detail we can read from the figure
+it does not establish an exact reconstruction of the full resting pool dynamics
+the paper gives changing inputs beta times N and beta times Nhat in equation 13
+Table 1 has an unclear value for g and the k = 8.5 case is above N0 = 4
+the constant input assumption avoids assigning a value to g
+
+parameter experiment
+
+results/figures/03_lambda_experiment.png compares four lambda values with k = 1.4
+results/parameter_metrics.csv records peak T and later oscillation measurements
+RESULTS.txt explains what changed in the run
+the experiment changes lambda while keeping the equations and other parameters fixed
+
+learning equations with SINDy
+
+results/figures/04_sindy_training_windows.png compares training lengths
+results/figures/05_sindy_parameter_comparison.png compares two parameter settings
+results/learned_equations.txt shows the fitted equations
+results/coefficient_comparison.csv compares every candidate coefficient
+results/sindy_metrics.csv records forecast errors and recovered terms
+results/threshold_selection.csv records how the cutoff was chosen
+training validation and testing use separate data as described in MODEL_GUIDE.txt
+even the short training case uses extra validation data to choose the cutoff
+
+running and checking the code
+
+python immune_miniproject.py --check-only checks the equations and scaling
+python immune_miniproject.py runs every experiment and saves the results
+the notebook runs the same functions and displays the figures and fitted equations
+run_manifest.json records the settings versions and exact list of current output files
+requirements-tested.txt gives the library versions used for the included results

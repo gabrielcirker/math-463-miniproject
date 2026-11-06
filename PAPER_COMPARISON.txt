@@ -1,0 +1,52 @@
+published baseline comparison
+
+the reference is Figure 5B middle inset on page 7 of Khailaie and colleagues 2013
+https://doi.org/10.3389/fimmu.2013.00474
+it uses lambda = 0.006 and k = 1.4
+
+what was read from the paper
+
+the PDF contains the figure as an 8700 by 7371 pixel image
+the labeled time ticks at 200 400 and 600 give the horizontal calibration
+the labeled T ticks from 0 through 1200 give the vertical calibration
+no curve alignment or parameter adjustment was used
+paper_reference/calibration.json gives the tick positions and color rule
+paper_reference/figure5B_trace.csv keeps the lower median and upper blue stroke readings
+paper_reference/peak_readings.json gives the four peak readings and coordinate sensitivity
+the same approximate peak values are written near the top of the main code
+
+how to repeat the numerical comparison
+
+run the main code then run
+
+    python check_paper_trace.py
+
+if you used another results folder give its path
+
+    python check_paper_trace.py --results results_finer
+
+the script compares the model at each visible source column within the model time range
+it does not shift the time axis or rescale the simulated T values
+
+what the included run shows
+
+99.65 percent of the compared model values fall inside the printed blue stroke
+the largest distance outside the stroke is less than 0.63 source pixels
+the tick locations have roughly one source pixel of reading uncertainty
+the four peak height differences are less than one vertical source pixel
+one vertical source pixel corresponds to about 1.74 T cells in the figure
+the largest peak time difference is about 0.63 model time units
+
+the baseline curve matches the published trace within the detail visible in the figure
+the other five time course panels show the remaining inset parameter settings
+they were not independently digitized for this comparison
+
+what this comparison means
+
+the reference is a plotted line rather than the authors numerical data
+its thickness especially affects readings around sharp peaks
+top stroke heights are slightly different from an exact curve centerline
+the coordinate sensitivity ranges are not statistical confidence intervals
+agreement with the printed inset does not reconstruct the resting cell pools
+it also does not recreate the full bifurcation diagram
+the constant input assumption remains part of this implementation

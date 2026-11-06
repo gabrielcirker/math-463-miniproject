@@ -1,0 +1,119 @@
+immune model mini project
+
+files and setup
+
+the main file is immune_miniproject.py
+the notebook has the same code if you would rather use Colab or Jupyter
+
+parameters go in par
+rhs gives the three rates
+solve_ivp solves the model
+Theta holds the possible terms and Xi holds the fitted coefficients
+
+running it
+
+open a terminal in this folder and install the libraries
+
+    python -m pip install -r requirements.txt
+
+check the equations and scaling
+
+    python immune_miniproject.py --check-only
+
+run the whole project
+
+    python immune_miniproject.py
+
+use python3 on a Mac if python does not work
+Python 3.10 or newer is needed
+the code saves everything in a results folder where you run it
+
+using the notebook
+
+open immune_miniproject.ipynb in Colab or Jupyter
+run the cells in order
+the last cell can zip the results and download them in Colab
+
+figures
+
+figures/01_figure5_time_courses.png
+    the six time courses based on figure 5 with fixed activation inputs
+
+figures/02_baseline_all_states.png
+    the baseline T cells Tregs and IL2
+
+figures/03_lambda_experiment.png
+    what changes when we change lambda
+
+figures/04_sindy_training_windows.png
+    SINDy fits using short medium and longer training windows
+
+figures/05_sindy_parameter_comparison.png
+    separate SINDy fits at two lambda values
+
+figures/06_paper_peak_comparison.png
+    the baseline curve and approximate peaks read from the published inset
+
+these files are all inside results
+there are SVG copies too for sharper figures
+
+other useful files
+
+results/learned_equations.txt
+    the equations SINDy actually found
+
+results/coefficient_comparison.csv
+    the paper coefficients next to the fitted coefficients
+
+results/sindy_metrics.csv
+    errors for each state and whether the test run finished
+
+results/threshold_selection.csv
+    the cutoffs we tried and the validation scores
+
+results/parameter_metrics.csv
+    peaks amplitudes and detected peak spacing
+
+results/run_manifest.json
+    all the settings and library versions
+    the files list shows exactly which outputs belong to the latest run
+
+RESULTS.txt
+    a short explanation of the saved run
+
+MODEL_GUIDE.txt
+    the equations assumptions and how the fitting works
+
+PROJECT_GUIDE.txt
+    an overview of the model experiments and output files
+
+PAPER_COMPARISON.txt
+    how the published baseline time course was checked
+
+changing things
+
+the parameter values are in default_parameters near the top of the file
+the starting values and training windows are right below them
+use a new output folder if you want to keep an earlier run
+
+    python immune_miniproject.py --dt 0.025 --output-dir results_finer
+
+this saves samples more often
+the solver still picks its own internal steps
+running again with the same folder replaces files with the same names
+old files from a different setup can still be in that folder
+the notebook displays and zips only the files in the latest manifest
+
+checking the published trace
+
+    python check_paper_trace.py
+
+this uses the digitized reference in paper_reference
+it compares the baseline with the printed blue line rather than exact author data
+
+the model choice
+
+this is the three state model with fixed inputs k and lambda times k
+it does not include the two resting cell pools or guess the missing g
+the baseline time course was checked against the printed Figure 5B inset
+that comparison does not recreate the full five state model or bifurcation diagram

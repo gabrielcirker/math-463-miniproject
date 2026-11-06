@@ -1,0 +1,56 @@
+{
+  "source_pdf": "fimmu-04-00474.pdf",
+  "source_page": 7,
+  "figure": "Figure 5B k=1.4 lambda=0.006 inset",
+  "embedded_image_size": [
+    8700,
+    7371
+  ],
+  "crop_extraction_pixels": [
+    5242,
+    4225,
+    6384,
+    5025
+  ],
+  "blue_mask": "B>120 and B-R>60 and B-G>40",
+  "x_tick_times": [
+    200,
+    400,
+    600
+  ],
+  "x_tick_pixels": [
+    5615,
+    5995.5,
+    6375.5
+  ],
+  "x_scale": 1.90125,
+  "x_offset": 5234.833333333333,
+  "y_tick_values": [
+    0,
+    200,
+    400,
+    600,
+    800,
+    1000,
+    1200
+  ],
+  "y_tick_pixels": [
+    5012,
+    4897.5,
+    4782.5,
+    4667.5,
+    4552.5,
+    4437.5,
+    4323
+  ],
+  "y_scale": -0.5744642857142856,
+  "y_offset": 5012.178571428572,
+  "curve_extraction": "median y among all blue pixels per x column with min/max blue band retained",
+  "limitations": [
+    "Raster trace, not author numerical data",
+    "Tick positions read from source raster with roughly 1 pixel uncertainty",
+    "Steep thick trace gives wide vertical intervals and can underestimate pointwise median peaks",
+    "No phase amplitude or parameter optimization used",
+    "Agreement supports fixed-input inset comparison, not full five-state replication"
+  ]
+}

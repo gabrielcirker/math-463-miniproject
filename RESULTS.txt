@@ -1,0 +1,78 @@
+results and notes
+
+these numbers come from the saved CSV files in results
+they use clean simulated data and the three state constant input model
+the baseline is k = 1.4 and lambda = 0.006
+these are not measurements of symptoms or clinical relapses
+
+published baseline comparison
+figure 06 compares the baseline curve with four approximate published peaks
+the largest peak time difference is about 0.63 model time units
+the peak height differences are all less than 1.1 T cells
+the full blue stroke check includes 1134 visible source columns
+99.65 percent of model values are inside that stroke
+the rest are less than 0.63 source pixels outside it
+PAPER_COMPARISON.txt explains the digitization and its limits
+
+changing lambda
+all cases start at zero and run from 0 to 600 with k = 1.4
+the values below are rounded from parameter_metrics.csv
+
+lambda    highest T       late peak spacing    peak intervals
+0.006     1343.397090      152.225              2
+0.009      341.947844      175.350              1
+0.012       35.850762      not detected         0
+0.020       16.717780      not detected         0
+
+the highest T gets smaller across these four cases
+the late peak spacing uses the final 75 percent of each recording
+the lambda = 0.009 estimate comes from only one interval so it is preliminary
+not detected means there were too few qualifying peaks to estimate a period
+the CSV records this as nan rather than a zero period
+these peak measurements alone do not prove a stable limit cycle
+
+learning the equations
+the independent tests run from 0 to 600
+all four forecasts completed and stayed nonnegative in this saved run
+the values below are rounded from sindy_metrics.csv
+
+lambda    training end    selected terms    NRMSE T       NRMSE R       NRMSE I
+0.006      50             12                2.55204e-6    1.91032e-6    1.22750e-6
+0.006     150             12                2.11359e-7    1.62929e-7    1.80680e-7
+0.006     300             12                1.83685e-7    1.41666e-7    1.57089e-7
+0.020     300             11                6.71835e-4    9.78927e-4    6.27032e-4
+
+NRMSE means normalized root mean square error
+each number is the forecast error divided by that states true test range
+1e-6 means one millionth
+
+the three baseline fits keep all 12 correct nonzero coefficients
+this uses the recorded support tolerance of 1e-10
+the lambda = 0.02 fit keeps 11 and misses the T^2 term in dT/dt
+that is the fratricide term whose true coefficient is -1e-5
+the curves can still match closely even when a term is missing
+check coefficient_comparison.csv and learned_equations.txt for the actual fits
+we would need to test other settings before saying this always happens
+
+what went into the comparison
+even the 50 unit training case uses a separate 120 unit validation trajectory
+that extra data chooses the threshold and checks the validation forecast
+it does not refit the coefficients
+the true coefficients and independent test errors do not choose the threshold
+this is a clean data experiment with scaling and the correct quadratic term library
+real noisy data would be a harder problem
+
+numerical check
+solver_convergence.csv compares the known model with tighter integration settings
+the maximum differences divided by each states range are
+T    3.92030e-9
+R    1.82939e-9
+I    2.78759e-9
+the tighter solver settings barely change the results in this run
+they do not establish biological accuracy
+
+output files
+parameter_metrics.csv has the peak measurements and counts
+sindy_metrics.csv has errors and forecast status
+coefficient_comparison.csv has the true and learned coefficients
+run_manifest.json records the settings versions and model limitations
