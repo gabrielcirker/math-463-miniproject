@@ -6,30 +6,25 @@
   <meta name="description" content="MATH 463 miniproject by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi. A three-state model of T-cell, Treg, and IL-2 dynamics, parameter experiments, and SINDy results.">
   <meta name="theme-color" content="#f7f5ef">
   <title>Conventional T-cell, Treg, and IL-2 Dynamics</title>
-  <link rel="stylesheet" href="assets/site.css?v=report-reader-1">
+  <link rel="stylesheet" href="assets/site.css?v=editorial-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
-    <a class="wordmark" href="#overview" aria-label="MATH 463 miniproject, overview">MATH 463 <span>Miniproject</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#overview">Overview</a>
-      <a href="#files">Methods &amp; files</a>
-      <a href="#figures">Results</a>
-      <a href="#report">Final report</a>
-    </nav>
+    <a class="wordmark" href="https://gabrielcirker.github.io/" aria-label="Gabriel Cirker, portfolio">Gabriel Cirker <span>MATH 463</span></a>
+    <nav aria-label="Main navigation"><a href="https://gabrielcirker.github.io/">Portfolio</a><a href="report/final-report.pdf">Report PDF</a><a href="https://github.com/gabrielcirker/math-463-miniproject/blob/main/immune_miniproject.ipynb">Notebook</a><a href="https://github.com/gabrielcirker/math-463-miniproject">GitHub</a></nav>
   </header>
 
   <main id="main" class="wrap">
     <section id="overview" class="hero" aria-labelledby="project-title">
       <div class="hero-copy">
         <p class="eyebrow">MATH 463 miniproject</p>
-        <h1 id="project-title">Conventional T-cell, Treg, and IL-2 Dynamics</h1>
-        <p class="lede">This project uses a three-state ordinary differential equation model to study immune-cell dynamics, test parameter changes, and learn equations from simulated data with SINDy.</p>
-        <p class="lede"><strong>Authors:</strong> Gabriel Cirker, Kennedy Jamison, &amp; Cecilia Pirozzi</p>
+        <h1 id="project-title">Modeling immune-cell dynamics.</h1>
+        <p class="lede">A three-state model of conventional T cells, regulatory T cells, and IL-2. Parameter experiments and SINDy explore the dynamics of simulated immune responses.</p>
+        <p class="byline"><strong>Authors:</strong> Gabriel Cirker, Kennedy Jamison, &amp; Cecilia Pirozzi</p>
         <div class="actions">
-          <a class="button primary" href="https://github.com/gabrielcirker/math-463-miniproject">View repository <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="#files">View methods and files <span aria-hidden="true">↓</span></a>
+          <a class="button primary" href="#report">Read the study <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject">View repository <span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <aside class="model-key" aria-label="The three model variables">
@@ -48,9 +43,51 @@
       <p>A constant-input interpretation of <a href="https://doi.org/10.3389/fimmu.2013.00474">Khailaie et al. (2013)</a>. It omits the two resting cell pools and does not reproduce the full five-state model or bifurcation diagram. Results use simulated data and are not clinical predictions.</p>
     </div>
 
+    <section id="figures" class="section" aria-labelledby="figures-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / Results</p><h2 id="figures-title">Simulation and SINDy results</h2><p class="lede">The figures compare activation-input settings, the effect of λ, and SINDy training lengths. Results use clean simulated data from the three-state model.</p></div>
+        <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main/results/figures">All six figures <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="figure-grid">
+        <figure class="figure-wide">
+          <a class="plot-link" href="results/figures/01_figure5_time_courses.svg" aria-label="Open full-resolution time-course figure"><img src="results/figures/01_figure5_time_courses.png" alt="Six simulated conventional T-cell time courses, comparing k values 0.2, 1.4, and 8.5 at lambda 0.02 and 0.006." width="2445" height="1455" loading="lazy"></a>
+          <figcaption><div><span class="small-label">Figure 01</span><h3>T-cell time courses across activation inputs</h3><p>Six fixed-input settings corresponding to the paper’s Figure 5 insets.</p></div><a href="results/figures/01_figure5_time_courses.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure>
+          <a class="plot-link" href="results/figures/03_lambda_experiment.svg" aria-label="Open full-resolution lambda experiment figure"><img src="results/figures/03_lambda_experiment.png" alt="Simulated T-cell, Treg, and IL-2 responses across four lambda values with k fixed at 1.4." width="2124" height="1850" loading="lazy"></a>
+          <figcaption><div><span class="small-label">Figure 03</span><h3>Effect of λ on immune-cell dynamics</h3><p>Increasing λ reduced peak T-cell values in these four cases, with k fixed at 1.4.</p></div><a href="results/figures/03_lambda_experiment.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+        <figure>
+          <a class="plot-link" href="results/figures/04_sindy_training_windows.svg" aria-label="Open full-resolution SINDy training-window figure"><img src="results/figures/04_sindy_training_windows.png" alt="SINDy forecasts compared with the known model for training windows ending at 50, 150, and 300 model time units." width="2665" height="1785" loading="lazy"></a>
+          <figcaption><div><span class="small-label">Figure 04</span><h3>SINDy fits across training windows</h3><p>Training windows of 50, 150, and 300 time units each recovered the model’s 12 nonzero coefficients.</p></div><a href="results/figures/04_sindy_training_windows.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="report" class="report section" aria-labelledby="report-title">
+      <div><p class="eyebrow">02 / Final report</p><h2 id="report-title">Final project report</h2></div>
+      <div class="report-status">
+        <span class="status">PDF · 9 pages</span>
+        <p>Modeling Immune Activation &amp; Self-Tolerance: Conventional T-cell, Treg, and IL-2 Dynamics.</p>
+        <div class="actions">
+          <a class="button primary" href="report/final-report.pdf">Open PDF <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="report/final-report.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="report-reader">
+        <p id="report-help" class="reader-help">Read all nine pages below, or use the PDF links above if the viewer is unavailable. <a href="#after-report">Skip past the report</a>.</p>
+        <object id="report-viewer" class="report-viewer" data="report/final-report.pdf#view=FitH" type="application/pdf" aria-label="Final project report, 9-page PDF" aria-describedby="report-help" tabindex="0">
+          <div class="report-fallback">
+            <p>Your browser does not support embedded PDFs.</p>
+            <p><a href="report/final-report.pdf">Read the final report in this tab</a> or <a href="report/final-report.pdf" download>download the PDF</a>.</p>
+          </div>
+        </object>
+      </div>
+    </section>
+    <div id="after-report" tabindex="-1"></div>
     <section id="files" class="section" aria-labelledby="files-title">
       <div class="section-heading">
-        <div><p class="eyebrow">01 / Model and methods</p><h2 id="files-title">Model, experiments, and code</h2><p class="lede">The model tracks activated conventional T cells, regulatory T cells, and IL-2. Experiments vary the activation inputs and use separate training, validation, and test trajectories for SINDy.</p></div>
+        <div><p class="eyebrow">03 / Model and methods</p><h2 id="files-title">Model, experiments, and code</h2><p class="lede">The model tracks activated conventional T cells, regulatory T cells, and IL-2. Experiments vary the activation inputs and use separate training, validation, and test trajectories for SINDy.</p></div>
         <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main">Repository files <span aria-hidden="true">↗</span></a>
       </div>
       <div class="file-list">
@@ -91,52 +128,9 @@ python immune_miniproject.py</code></pre>
         </div>
       </details>
     </section>
-
-    <section id="figures" class="section" aria-labelledby="figures-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">02 / Results</p><h2 id="figures-title">Simulation and SINDy results</h2><p class="lede">The figures compare activation-input settings, the effect of λ, and SINDy training lengths. Results use clean simulated data from the three-state model.</p></div>
-        <a class="text-link" href="https://github.com/gabrielcirker/math-463-miniproject/tree/main/results/figures">All six figures <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="figure-grid">
-        <figure class="figure-wide">
-          <a class="plot-link" href="results/figures/01_figure5_time_courses.svg" aria-label="Open full-resolution time-course figure"><img src="results/figures/01_figure5_time_courses.png" alt="Six simulated conventional T-cell time courses, comparing k values 0.2, 1.4, and 8.5 at lambda 0.02 and 0.006." width="2445" height="1455" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 01</span><h3>T-cell time courses across activation inputs</h3><p>Six fixed-input settings corresponding to the paper’s Figure 5 insets.</p></div><a href="results/figures/01_figure5_time_courses.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
-        </figure>
-        <figure>
-          <a class="plot-link" href="results/figures/03_lambda_experiment.svg" aria-label="Open full-resolution lambda experiment figure"><img src="results/figures/03_lambda_experiment.png" alt="Simulated T-cell, Treg, and IL-2 responses across four lambda values with k fixed at 1.4." width="2124" height="1850" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 03</span><h3>Effect of λ on immune-cell dynamics</h3><p>Increasing λ reduced peak T-cell values in these four cases, with k fixed at 1.4.</p></div><a href="results/figures/03_lambda_experiment.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
-        </figure>
-        <figure>
-          <a class="plot-link" href="results/figures/04_sindy_training_windows.svg" aria-label="Open full-resolution SINDy training-window figure"><img src="results/figures/04_sindy_training_windows.png" alt="SINDy forecasts compared with the known model for training windows ending at 50, 150, and 300 model time units." width="2665" height="1785" loading="lazy"></a>
-          <figcaption><div><span class="small-label">Figure 04</span><h3>SINDy fits across training windows</h3><p>Training windows of 50, 150, and 300 time units each recovered the model’s 12 nonzero coefficients.</p></div><a href="results/figures/04_sindy_training_windows.svg">Open SVG <span aria-hidden="true">↗</span></a></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="report" class="report section" aria-labelledby="report-title">
-      <div><p class="eyebrow">03 / Final report</p><h2 id="report-title">Final project report</h2></div>
-      <div class="report-status">
-        <span class="status">PDF · 9 pages</span>
-        <p>Modeling Immune Activation &amp; Self-Tolerance: Conventional T-cell, Treg, and IL-2 Dynamics.</p>
-        <div class="actions">
-          <a class="button primary" href="#report-viewer">Read report below <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="report/final-report.pdf">Open PDF <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="report/final-report.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-      <div class="report-reader">
-        <p id="report-help" class="reader-help">Read all nine pages here. Use the viewer’s page and zoom controls, or <a href="report/final-report.pdf">open the PDF</a> if your browser does not display it. <a href="#after-report">Skip past the report</a>.</p>
-        <object id="report-viewer" class="report-viewer" data="report/final-report.pdf#view=FitH" type="application/pdf" aria-label="Final project report, 9-page PDF" aria-describedby="report-help" tabindex="0">
-          <div class="report-fallback">
-            <p>Your browser does not support embedded PDFs.</p>
-            <p><a href="report/final-report.pdf">Read the final report in this tab</a> or <a href="report/final-report.pdf" download>download the PDF</a>.</p>
-          </div>
-        </object>
-      </div>
-    </section>
   </main>
 
-  <footer id="after-report" class="site-footer wrap" tabindex="-1">
+  <footer class="site-footer wrap" tabindex="-1">
     <p>MATH 463 <span>·</span> Conventional T-cell, Treg, and IL-2 Dynamics</p>
     <div><a href="https://doi.org/10.3389/fimmu.2013.00474">Immune model · Khailaie et al.</a><a href="https://doi.org/10.1073/pnas.1517384113">SINDy · Brunton et al.</a><a href="https://github.com/gabrielcirker/math-463-miniproject">GitHub <span aria-hidden="true">↗</span></a></div>
   </footer>

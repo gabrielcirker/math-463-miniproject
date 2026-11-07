@@ -149,3 +149,113 @@ figcaption > a { font-size: 12px; white-space: nowrap; margin-top: 2px; }
   .report-viewer { display: none; }
 }
 
+
+/* Shared editorial refinements for the research collection. */
+:root { --paper: #f7f5ef; --ink: #192d38; --muted: #58666c; --blue: #246b67; --line: #d7dcd5; --soft: #edf0e9; }
+body { line-height: 1.7; }
+.wrap { width: min(1120px, calc(100% - 80px)); }
+.site-header { min-height: 100px; gap: 24px; }
+.wordmark { font-size: 16px; letter-spacing: -.02em; }
+.wordmark span { font-size: 12px; margin-left: 12px; }
+nav { gap: 24px; align-items: center; }
+nav a { font-size: 13px; padding-block: 10px; }
+nav a[aria-current="page"] { color: var(--blue); text-decoration: underline; text-underline-offset: 7px; }
+h1 { font-size: clamp(44px, 5.2vw, 68px); line-height: 1.08; letter-spacing: -.045em; max-width: 760px; text-wrap: balance; }
+h2 { font-size: clamp(32px, 3.5vw, 44px); letter-spacing: -.035em; text-wrap: balance; }
+h3 { font-size: 16px; font-weight: 600; }
+.hero { padding: 90px 0 72px; grid-template-columns: minmax(0, 1fr) 270px; gap: 72px; }
+.hero .lede { font-size: 18px; margin-top: 25px; max-width: 610px; }
+.hero .byline { font-size: 13px; line-height: 1.7; margin-top: 24px; color: var(--muted); }
+.hero .byline strong { color: var(--ink); font-weight: 600; }
+.hero .actions { margin-top: 30px; }
+.eyebrow, .small-label { font-size: 10px; letter-spacing: .16em; }
+.model-key { padding: 28px 0 28px 30px; border-color: #b9cbc1; }
+.model-key dl > div { padding: 19px 0; }
+.model-key dd { font-size: 13px; }
+.model-key dt { color: var(--blue); }
+.model-key .model-foot { font-size: 12px; }
+.scope-note { background: transparent; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 25px 0; border-radius: 0; gap: 26px; }
+.scope-note p { font-size: 13px; max-width: 840px; }
+.button { min-height: 46px; padding: 12px 20px; border-radius: 2px; }
+.text-link { white-space: normal; }
+.section { padding-top: 100px; }
+.section-heading { align-items: start; margin-bottom: 36px; }
+.section-heading .lede { font-size: 16px; max-width: 650px; margin-top: 20px; }
+.section-heading > a { flex-shrink: 0; font-size: 13px; margin-top: 29px; }
+.file-list { border-color: #9cabaa; }
+.file-row { padding: 29px 0; gap: 25px; grid-template-columns: 230px minmax(0, 1fr) 300px; }
+.file-links { gap: 10px 18px; }
+.file-links a { line-height: 1.7; }
+.quick-start { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; margin-top: 30px; }
+.quick-start summary { padding: 20px 0; }
+.quick-start-body { padding: 0 0 24px; }
+.figure-grid { gap: 45px 32px; }
+.plot-link { border: 0; border-radius: 2px; padding: 24px; background: #fff; }
+.plot-link:hover { outline: 1px solid var(--line); }
+.figure-wide .plot-link { padding: 30px; }
+figcaption { padding-top: 20px; }
+figcaption p { max-width: 640px; }
+.report { margin-top: 100px; padding: 45px 0; border-top-color: #9cabaa; gap: 32px 70px; }
+.report-status { max-width: none; }
+.report-status .actions { gap: 20px; margin-top: 20px; }
+.report-viewer { border-radius: 2px; }
+.report-section .section-heading { margin-bottom: 24px; }
+.report-pages { background: #e7e9e2; border-color: #c9d0c9; border-radius: 2px; padding: 24px; }
+.reader-toolbar { padding: 20px 0; }
+.reader-toolbar select { min-height: 42px; }
+.result-layout { gap: 48px; }
+.archive-banner { background: var(--soft); border: 0; padding: 38px; margin-top: 100px; }
+.archive-banner .lede { max-width: 680px; }
+.archive-hero { padding: 85px 0 15px; }
+.archive-hero .lede { max-width: 690px; }
+.archive-group { padding: 27px 0; }
+.archive-group summary { font-size: 17px; }
+.archive-group p { margin-top: 20px; max-width: 720px; line-height: 1.8; }
+.archive-group ul { margin-top: 22px; }
+.archive-group li { padding: 8px 0; }
+.archive-coverage { padding-bottom: 70px; }
+.archive-coverage .lede { font-size: 15px; max-width: 760px; }
+.site-footer { padding-block: 38px 44px; gap: 20px; font-size: 12px; }
+:focus-visible { outline: 3px solid #a15a2b; outline-offset: 4px; }
+@media (max-width: 1050px) {
+  .wrap { width: calc(100% - 56px); }
+  .hero { gap: 40px; grid-template-columns: minmax(0, 1fr) 225px; }
+  .file-row { grid-template-columns: 210px minmax(0, 1fr); }
+  .file-links { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-header { min-height: auto; padding: 23px 0 18px; gap: 12px; }
+  .wordmark { font-size: 16px; }
+  nav { gap: 10px 23px; width: 100%; }
+  nav a { font-size: 12px; padding-block: 7px; }
+  .hero { padding: 52px 0 40px; grid-template-columns: 1fr; gap: 38px; }
+  h1 { font-size: clamp(40px, 10.4vw, 56px); }
+  .hero .lede { font-size: 16px; margin-top: 21px; }
+  .hero .byline { font-size: 12px; margin-top: 20px; }
+  .model-key { padding: 23px 0 0; }
+  .model-key dl > div { padding: 3px 0 10px; }
+  .model-key dd { font-size: 12px; }
+  .model-key .model-foot { font-size: 11px; }
+  .scope-note { gap: 10px; padding: 23px 0; }
+  .section { padding-top: 65px; }
+  .section-heading { margin-bottom: 26px; }
+  .section-heading .lede { font-size: 15px; }
+  .section-heading > a { display: inline-block; margin-top: 16px; }
+  .file-row { grid-template-columns: 1fr; gap: 11px; padding: 24px 0; }
+  .file-links { grid-column: 1; }
+  .file-row p, .file-links { margin-left: 30px; }
+  .quick-start summary { padding: 18px 0; }
+  .figure-grid { gap: 36px; }
+  .plot-link, .figure-wide .plot-link { padding: 10px; }
+  figcaption { flex-wrap: wrap; }
+  .report { margin-top: 65px; gap: 25px; padding: 32px 0; }
+  .report h2 { font-size: 33px; }
+  .report-pages { padding: 8px; }
+  .archive-banner { margin-top: 65px; padding: 26px; }
+  .archive-hero { padding: 50px 0 0; }
+  .archive-group summary { font-size: 16px; }
+  .archive-coverage { padding-bottom: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+@media print { .archive-banner { display: none; } .hero { padding: 30px 0; } .section { padding-top: 30px; } }
