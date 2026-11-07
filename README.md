@@ -44,8 +44,11 @@ SINDy method: [Brunton, Proctor, and Kutz (2016)](https://doi.org/10.1073/pnas.1
 
 ## Final report
 
+[Read the report on the project website](https://gabrielcirker.github.io/math-463-miniproject/#report). The responsive reader embeds the original PDF and includes direct open and download links for browsers without embedded PDF support.
+
 [Read the final report](report/final-report.pdf): *Modeling Immune Activation & Self-Tolerance: Conventional T-cell, Treg, and IL-2 Dynamics*, by Gabriel Cirker, Kennedy Jamison, and Cecilia Pirozzi (9-page PDF).
 
 ## Website maintenance
 
 The site uses `index.html` and `assets/site.css`, with no build dependencies. GitHub Pages serves the root of `main`; published changes follow commits pushed to that branch. Scientific files retain their original relative paths. Two notebook output cells containing local machine paths were cleared for public sharing; source code and saved scientific results are unchanged.
+
